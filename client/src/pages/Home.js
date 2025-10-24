@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Heart, Eye, Calendar, User, Tag } from 'lucide-react';
+import { Heart, Calendar, User, Tag } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
@@ -210,7 +210,7 @@ function Home() {
   const handleVote = async (designId) => {
     try {
       // Simple voting without authentication - just increment vote count
-      const response = await axios.post(`/api/designs/${designId}/vote`);
+      await axios.post(`/api/designs/${designId}/vote`);
       toast.success('Vote recorded!');
       fetchDesigns(); // Refresh to update vote counts
     } catch (error) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Heart, Eye, Calendar, User, Tag, Filter, Search } from 'lucide-react';
+import { Heart, Calendar, User, Tag, Filter, Search } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 

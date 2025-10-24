@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { LogIn, UserPlus, Upload, Image, Settings, LogOut } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { Upload, Image } from 'lucide-react';
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -59,45 +58,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const UserMenu = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`;
-
-const UserInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #495057;
-  font-weight: 500;
-`;
-
-const LogoutButton = styled.button`
-  background: none;
-  border: none;
-  color: #dc3545;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(220, 53, 69, 0.1);
-  }
-`;
-
 function Header() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/');
-  };
 
   return (
     <HeaderContainer>
